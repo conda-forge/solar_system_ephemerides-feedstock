@@ -11,7 +11,8 @@ source:
 
 build:
   entry_points:
-    - create_solar_system_ephemeris = solar_system_ephemerides.cli:main
+    - create_solar_system_ephemeris = solar_system_ephemerides.generate:cli
+    - ephemeris_path = solar_system_ephemerides.paths:cli
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
@@ -34,6 +35,7 @@ test:
   commands:
     - pip check
     - create_solar_system_ephemeris --help
+    - ephemeris_path --help
   requires:
     - pip
 
