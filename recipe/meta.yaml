@@ -1,5 +1,5 @@
 {% set name = "solar_system_ephemerides" %}
-{% set version = "1.0.1" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/solar_system_ephemerides-{{ version }}.tar.gz
-  sha256: 8084c564a46676f8417cdf01cfbd104a1dedc6d61eab000d264f7c1b15b52a83
+  sha256: 1d93a9d7c84d0132e1a6a4cfb27836d7fd726d768fbe4333bca45f77d64181f1
 
 build:
   entry_points:
