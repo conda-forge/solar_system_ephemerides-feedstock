@@ -28,6 +28,7 @@ requirements:
     - python >=3.6,<4.0
     - astropy-base
     - jplephem
+    - setuptools >= 61
 
 test:
   imports:
