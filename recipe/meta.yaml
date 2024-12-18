@@ -15,7 +15,7 @@ build:
     - ephemeris_path = solar_system_ephemerides.paths:cli
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -26,8 +26,9 @@ requirements:
     - pip
   run:
     - python >=3.6,<4.0
-    - astropy
+    - astropy-base
     - jplephem
+    - setuptools >=61
 
 test:
   imports:
