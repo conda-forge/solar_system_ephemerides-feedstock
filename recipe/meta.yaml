@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/solar_system_ephemerides-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/solar_system_ephemerides-{{ version }}.tar.gz
   sha256: 1d93a9d7c84d0132e1a6a4cfb27836d7fd726d768fbe4333bca45f77d64181f1
 
 build:
@@ -15,17 +15,17 @@ build:
     - ephemeris_path = solar_system_ephemerides.paths:cli
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 2
 
 requirements:
   host:
-    - python >=3.6,<4.0
+    - python {{ python_min }}
     - setuptools >=61
     - setuptools-scm >=6.2
     - wheel
     - pip
   run:
-    - python >=3.6,<4.0
+    - python >={{ python_min }},<4.0
     - astropy-base
     - jplephem
     - setuptools >=61
@@ -39,6 +39,7 @@ test:
     - ephemeris_path --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/cwinpy/solar-system-ephemerides
